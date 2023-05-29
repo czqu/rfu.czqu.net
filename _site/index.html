@@ -1,287 +1,359 @@
-<!DOCTYPE HTML>
-
-<html lang="zh-cn">
-
-
+<!DOCTYPE html>
+<html>
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entering.....</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.4.1/jquery.min.js"
+        type="application/javascript"></script>
+    <script src="./assets/js/select.js"></script>
 
+    <style type="text/css">
+        * {
+            color: #111827;
+        }
 
+        a {
+            text-decoration: none;
+        }
 
+        .blink {
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            display: -webkit-flex;
+            align-items: center;
+            justify-content: center;
+            animation: blink 3s linear infinite;
+            -webkit-animation: blink 3s linear infinite;
+            -moz-animation: blink 3s linear infinite;
+            -ms-animation: blink 3s linear infinite;
+            -o-animation: blink 3s linear infinite;
+        }
 
-    <!-- META -->
-    <meta charset="utf-8">
+        @keyframes blink {
+            0% {
+                opacity: 0;
+                transform: scale(1);
+            }
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="keywords" content="指纹解锁，远程解锁，安卓，Windows，文件传输，远程">
+            20% {
+                opacity: 0;
+                transform: scale(1);
+            }
 
-    <!-- PAGE TITLE -->
-    <title>远程解锁——您的全套远程解决方案</title>
+            40% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
 
-    <!-- FAVICON -->
-    <link rel="shortcut icon" href="//rfu.czqu.net/assets/img/favicon-unlock.ico">
-    <!-- Open Graph -->
-    <meta property="og:title" content="远程解锁——您的全套远程解决方案">
+            80% {
+                opacity: 1;
+                transform: scale(0.98);
+            }
 
-    <meta property="og:type" content="website">
-    <meta property="og:description" content="远程解锁——您的全套远程解决方案">
+            90% {
+                opacity: 1;
+                transform: scale(0.98);
+            }
 
-    <meta property="og:image" content="//rfu.czqu.net/assets/img/favicon-unlock.png">
-    <meta property="og:url" content="https://rfu.czqu.net/">
-    <meta property="og:site_name" content="2084 Team">
-    <link rel="stylesheet" type="text/css" href="./assets/css/main.min.css" async>
-    <!--   hls引入要在前 -->
-    <script src="./assets/js/hls.js"></script>
-    <link rel="stylesheet" href="./libs/dplayer/DPlayer.min.css">
+            100% {
+                opacity: 0.2;
+                transform: scale(1.2);
+            }
+        }
 
+        @-webkit-keyframes blink {
+            0% {
+                opacity: 0;
+                transform: scale(1);
+            }
 
+            20% {
+                opacity: 0;
+                transform: scale(1);
+            }
 
+            40% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+
+            80% {
+                opacity: 1;
+                transform: scale(0.98);
+            }
+
+            90% {
+                opacity: 1;
+                transform: scale(0.98);
+            }
+
+            100% {
+                opacity: 0.2;
+                transform: scale(1.2);
+            }
+        }
+
+        @-moz-keyframes blink {
+            0% {
+                opacity: 0;
+                transform: scale(1);
+            }
+
+            20% {
+                opacity: 0;
+                transform: scale(1);
+            }
+
+            40% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+
+            80% {
+                opacity: 1;
+                transform: scale(0.98);
+            }
+
+            90% {
+                opacity: 1;
+                transform: scale(0.98);
+            }
+
+            100% {
+                opacity: 0.2;
+                transform: scale(1.2);
+            }
+        }
+
+        @-ms-keyframes blink {
+            0% {
+                opacity: 0;
+                transform: scale(1);
+            }
+
+            20% {
+                opacity: 0;
+                transform: scale(1);
+            }
+
+            40% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+
+            80% {
+                opacity: 1;
+                transform: scale(0.98);
+            }
+
+            90% {
+                opacity: 1;
+                transform: scale(0.98);
+            }
+
+            100% {
+                opacity: 0.2;
+                transform: scale(1.2);
+            }
+        }
+
+        @-o-keyframes blink {
+            0% {
+                opacity: 0;
+                transform: scale(1);
+            }
+
+            20% {
+                opacity: 0;
+                transform: scale(1);
+            }
+
+            40% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+
+            80% {
+                opacity: 1;
+                transform: scale(0.98);
+            }
+
+            90% {
+                opacity: 1;
+                transform: scale(0.98);
+            }
+
+            100% {
+                opacity: 0.2;
+                transform: scale(1.2);
+            }
+        }
+
+        .botCenter {
+            position: fixed;
+            width: 100%;
+            height: 50px;
+            bottom: 2px;
+            line-height: 20px;
+            font-size: 12px;
+            text-align: center;
+            animation: botCenter 3s linear;
+            -webkit-animation: botCenter 3s linear;
+            -moz-animation: botCenter 3s linear;
+            -ms-animation: botCenter 3s linear;
+            -o-animation: botCenter 3s linear;
+        }
+
+        @keyframes botCenter {
+            0% {
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0;
+            }
+
+            40% {
+                opacity: 0.3;
+            }
+
+            80% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes botCenter {
+            0% {
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0;
+            }
+
+            40% {
+                opacity: 0.3;
+            }
+
+            80% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-moz-keyframes botCenter {
+            0% {
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0;
+            }
+
+            40% {
+                opacity: 0.3;
+            }
+
+            80% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-ms-keyframes botCenter {
+            0% {
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0;
+            }
+
+            40% {
+                opacity: 0.3;
+            }
+
+            80% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-o-keyframes botCenter {
+            0% {
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0;
+            }
+
+            40% {
+                opacity: 0.3;
+            }
+
+            80% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
 
 </head>
 
-
 <body>
-    <!-- FONTS -->
-    <link href="./assets/css/latin-ext.min.css" rel="stylesheet" async>
-    <link rel="stylesheet" type="text/css" href="./assets/css/plugins.min.css" async>
 
-    <!-- STYLESHEETS -->
 
-
-
-
-    <!-- PRELOADER -->
-    <div class="preloader">
-
-
-        <!-- SPINNER -->
-        <div class="spinner">
-
-
-            <div class="bounce-1"></div>
-            <div class="bounce-2"></div>
-            <div class="bounce-3"></div>
-
-
-        </div>
-        <!-- /SPINNER -->
-
-
-    </div>
-    <!-- /PRELOADER -->
-
-
-    <!-- HERO -->
-    <div class="hero">
-
-
-        <!-- FRONT CONTENT -->
-        <div class="front-content">
-
-
-            <!-- CONTAINER -->
-            <div class="container-fluid">
-
-
-                <!-- COLUMN -->
-                <div class="col-sm-7 text-left full-height">
-
-
-                    <!-- CONTAINER MID -->
-                    <div class="container-mid">
-
-
-                        <!-- ANIMATION CONTAINER -->
-                        <div class="animation-container animation-fade-down" data-animation-delay="0">
-
-                            <img class="img-responsive logo" src="//rfu.czqu.net/assets/img/logo.png" alt="image">
-
-                        </div>
-                        <!-- /ANIMATION CONTAINER -->
-
-
-                        <!-- ANIMATION CONTAINER -->
-                        <div class="animation-container animation-fade-left" data-animation-delay="200">
-
-
-                            <p class="text-left">
-                                "远程解锁”不仅能够通过手机扫描指纹登录电脑，还能控制电脑开机、关机、待机、锁屏，多种功能等你来体验！(iOS版加群获取ipa就可以：1053768454) <a
-                                    href="https://czqu.net/cn/posts/31496/">常见问题和问题反馈点我</a></p>
-                            <br>
-
-                            <!-- <p class="subline">最近更新</p>
-                          <p class="text-left">最近更新:</p>
-                          <br>
-                        <p class="text-left">增加“解锁后自动关闭应用”功能</p>
-                        <p class="text-left">电脑端增加自定义端口功能</p>
-                        <p class="text-left">*需要安装电脑端方可使用</p>
-                        <br>
-                    -->
-
-                            <!-- ANIMATION CONTAINER -->
-                            <div class="animation-container animation-fade-up" data-animation-delay="400">
-
-                                <div class="download-button"
-                                    onclick='window.open("https://czqu.lanzoui.com/b00zqvz6j");'><i
-                                        class="fa fa-windows" aria-hidden="true"></i>Windows &nbsp&nbsp</div>
-                                <div class="download-button"
-                                    onclick='window.open("https://www.coolapk.com/apk/com.kingtous.remote_unlock?tdsourcetag=s_pctim_aiomsg");'>
-                                    <i class="fa fa-android" aria-hidden="true"></i>Android</div>
-                            </div>
-                            <div class="animation-container animation-fade-up" data-animation-delay="400">
-                                <div class="download-button"
-                                    onclick='window.open("https://czqu.lanzoui.com/b00zqvz7a");'><i class="fa fa-linux"
-                                        aria-hidden="true"></i>Linux(X64)</div>
-                                <div class="download-button"
-                                    onclick='window.open("https://czqu.lanzoui.com/b00zqvz8b");'><i class="fa fa-apple"
-                                        aria-hidden="true"></i>macOS</div>
-
-                            </div>
-                            <!-- /ANIMATION CONTAINER -->
-                            <br>
-                            <br>
-
-                            <div class="video-player">
-                                <div class="title center-align">
-
-                                </div>
-                                <div class="row">
-                                    <div id="dplayer" class="dplayer-video"></div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!-- /ANIMATION CONTAINER -->
-                        <!--                 <div class="tlinks">From <a href="./" >2084团队</a></div> -->
-
-
-                    </div>
-                    <!-- /CONTAINER MID -->
-
-
-                </div>
-                <!-- /COLUMN -->
-                <div class="col-sm-1 full-height"></div>
-
-                <!-- COLUMN -->
-                <div class="col-sm-4 text-right  full-height">
-
-
-                    <!-- CONTAINER MID -->
-                    <div class="container-mid">
-
-
-                        <!-- ANIMATION CONTAINER -->
-                        <div class="animation-container animation-fade-right" data-animation-delay="0">
-
-
-                            <!-- PHONE SLIDER -->
-                            <div class="phone-slider owl-carousel">
-
-
-                                <img src="//rfu.czqu.net/assets/img/slides/slide-1.webp" alt="image">
-                                <img src="//rfu.czqu.net/assets/img/slides/slide-2.webp" alt="image">
-                                <img src="//rfu.czqu.net/assets/img/slides/slide-3.webp" alt="image">
-
-
-                            </div>
-                            <!-- /PHONE SLIDER -->
-
-
-                        </div>
-                        <!-- /ANIMATION CONTAINER -->
-
-
-                    </div>
-                    <!-- /CONTAINER MID -->
-
-
-                </div>
-                <!-- /COLUMN -->
-
-
-
-
-
-
-            </div>
-            <!-- /CONTAINER -->
-
-
-            <!-- FOOTER -->
-            <div class="footer">
-
-                <!-- CONTAINER FLUID -->
-                <div class="container-fluid">
-
-
-                    <!-- COLUMN -->
-                    <!--       <div class="col-xs-6 text-left">
-
-                    <p class="popup-links"><a href="https://blog.czqu.net/posts/31496/" >FAQ&常见问题</a><a href="#" data-featherlight="#popup-privacy-terms">隐私政策</a><a href="#" data-featherlight="#popup-updatelog-terms">更新日志</a></p>
-
-                </div> -->
-                    <!-- /COLUMN -->
-                    <div class="col-xs-6 text-left">
-                    </div>
-
-
-                    <!-- COLUMN -->
-                    <div class="col-xs-6 text-right">
-
-                        <p>Copyright © 2019-2023 <a href="https://blog.czqu.net" target="_blank" title="Paul Chen">Paul Chen |
-                            2084 Team</a> </p>
-                    </div>
-                    <!-- /COLUMN -->
-
-
-                </div>
-                <!-- /CONTAINER FLUID -->
-
-
-            </div>
-            <!-- /FOOTER -->
-
-
-        </div>
-        <!-- /FRONT CONTENT -->
-
-
-        <!-- BACKGROUND CONTENT -->
-        <div class="background-content parallax-on">
-
-
-            <!-- BACKGROUND CONTENT INNER -->
-            <div class="background-content-inner">
-
-                <div class="background-overlay"></div>
-                <div class="background-img layer" data-depth="0.05"></div>
-
-            </div>
-            <!-- /BACKGROUND CONTENT INNER -->
-
-
-        </div>
-        <!-- /BACKGROUND CONTENT -->
-
-
+    <div class="blink">
+        <p>Welcome back, <b>entering...</b><br />欢迎回来，正在<b>进入...</b></p>
     </div>
 
-    <!-- JAVASCRIPTS -->
-    <script type="text/javascript" src="./assets/js/plugins.js"></script>
-    <script type="text/javascript" src="./assets/js/main.js"></script>
-    <script src="./libs/dplayer/DPlayer.min.js"></script>
-    <script>$(function () { new DPlayer({ container: document.getElementById("dplayer"), autoplay: !1, theme: "#42b983", loop: !0, lang: "zh-cn", preload: "none", volume: Number("0.7"), video: { url: "//rfu.czqu.net/assets/video/rfu-1080p-264.m3u8", pic: "//rfu.czqu.net/assets/video/rfu.png", thumbnails: "" } }) })
+    <script language="javascript">
+        window.setTimeout("window.location.href='javascript:travelling()'", 5000);
     </script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XLGQZWRHV0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-XLGQZWRHV0');
-</script>
 </body>
-
 
 </html>
