@@ -8,14 +8,14 @@ function travelling() {
       url.splice(url.indexOf(origin), 1);
     }
   }
-  var requestUrl = "https://ip-api.com/json";
+  var requestUrl = "https://ipapi.co/json/";
 
   var country;
   $.ajax({
     url: requestUrl,
     type: 'GET',
     success: function (json) {
-      country = json.countryCode;
+      country = json.country;
     },
     error: function (err) {
       country = CN;
