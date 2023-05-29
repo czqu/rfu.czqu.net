@@ -18,7 +18,7 @@ function travelling() {
       country = json.country;
     },
     error: function (err) {
-      country = CN;
+      country = 'CN';
     }
   });
 
